@@ -1,0 +1,2 @@
+# QlikWorld
+Fictional Laffle shop
