@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: fact_cases
+    description: One record per case contacting customer service
+    columns:
+      - name: case_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: Datetime
+        description: Date of case occurence.
+      - name: Customer_id
+        description: Unique customer identifier
+        test:
+          - not_null
+      - name: Channel
+        description: Method of contact
+        tests:
+          - accepted_values:
+              values: ['email', 'phone']
+      - name: Reason
+        description: Reason for contact with customer services 
+        tests:
+          - accepted_values:
+              values: ['support', 'signup']

@@ -1,0 +1,1 @@
+select * from development_db.subscribers.cases
