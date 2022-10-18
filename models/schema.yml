@@ -5,7 +5,7 @@ sources:
     tables:
       - name: active_users
       - name: cases
-      - name: dim_customers
+      - name: dim_customer
       - name: dim_geo
       - name: dim_product
       - name: product
@@ -35,3 +35,79 @@ models:
         tests:
           - accepted_values:
               values: ['support', 'signup']
+  
+  - name: dim_customer
+    description: One record per customer with general info
+    columns:
+      - name: Customer_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: Age
+        description: Customer age as integer
+      - name: Gender
+        description: Gender
+        test:
+        - accepted_values:
+              values: ['female', 'male']
+      - name: Age_group
+        description: 10-year age brackets
+      - name: Geo_id
+        description: Unique municipality identifier
+  
+  - name: dim_geo
+    description: One record per municipality
+    columns:
+      - name: Geo_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null 
+      - name: Kommune
+        description: Municipality
+      - name: Region
+        description: Region
+  
+  - name: dim_product
+    description: One record per product sold
+    columns:
+      - name: Product_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null 
+      - name: Name
+        description: Product name
+      - name: Price
+        description: Product price
+      - name: Billing_cycle
+        description: Billing cycle for product
+  
+  - name: fact_product
+    description: One record per customer
+    columns:
+      - name: Customer_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null 
+      - name: Signup_date_time
+        description: Date of signing up
+      - name: Cancel_date_time
+        description: Date of cancelation. OBS! if it is year 2100 customer is currently active
+
+  - name: fact_active
+    description: One record per customer
+    columns:
+      - name: Customer_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null 
+      - name: Active
+        description: Is the use active on this date (true/false)
+      - name: New_customer
+        description: Is the customer new this month (true/false)
+      - name: Cancel
+        description: Did the customer cancel this month (true/false)
