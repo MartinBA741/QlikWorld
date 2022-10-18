@@ -1,5 +1,15 @@
 version: 2
 
+sources:
+  - name: subscribers
+    tables:
+      - name: active_users
+      - name: cases
+      - name: dim_customers
+      - name: dim_geo
+      - name: dim_product
+      - name: product
+
 models:
   - name: fact_cases
     description: One record per case contacting customer service
