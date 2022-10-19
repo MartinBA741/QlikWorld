@@ -106,8 +106,8 @@ models:
           - unique
           - not_null 
       - name: Active
-        description: Is the use active on this date (true/false)
+        description: Is the customer active on this date (true=1)
       - name: New_customer
-        description: Is the customer new this month (true/false)
+        description: Is the customer new this month (true=1)
       - name: Cancel
-        description: Did the customer cancel this month (true/false)
+        description: Did the customer cancel this month (true=1)
