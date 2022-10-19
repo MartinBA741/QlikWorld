@@ -8,3 +8,4 @@ Subscribtion data for fictional company
 - Connect snowflake and dbt
 - Transform data to final data model in snowflake with dbt
 - Load data to qlik and blow minds! 
+...
