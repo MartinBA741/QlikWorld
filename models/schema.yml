@@ -98,12 +98,11 @@ models:
         description: Date of cancelation. OBS! if it is year 2100 customer is currently active
 
   - name: fact_active
-    description: One record per customer
+    description: One record per customer per month after customer is regisered in system
     columns:
       - name: Customer_id
-        description: Primary key
+        description: Customer identifier
         tests:
-          - unique
           - not_null 
       - name: Active
         description: Is the customer active on this date (true=1)
