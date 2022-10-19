@@ -2,6 +2,7 @@ version: 2
 
 sources:
   - name: subscribers
+    database: raw
     tables:
       - name: fact_active
       - name: fact_cases
