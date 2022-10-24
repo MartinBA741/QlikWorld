@@ -1,2 +1,2 @@
 select * 
-from {{ source('subscribers', 'cases') }}
+from {{ source('subscribers', 'fact_cases') }}

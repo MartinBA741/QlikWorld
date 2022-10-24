@@ -2,13 +2,14 @@ version: 2
 
 sources:
   - name: subscribers
+    database: raw
     tables:
-      - name: active_users
-      - name: cases
+      - name: fact_active
+      - name: fact_cases
       - name: dim_customer
       - name: dim_geo
       - name: dim_product
-      - name: product
+      - name: fact_product
 
 models:
   - name: fact_cases
